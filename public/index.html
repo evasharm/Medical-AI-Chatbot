@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SENA Medical Practice</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">S</div>
+        <div>
+          <div class="brand-name">SENA Medical Practice</div>
+          <div class="brand-sub">Primary care · Family medicine · Appointments</div>
+        </div>
+      </div>
+      <button class="btn btn-primary" id="openAssistantBtn">Ask Assistant</button>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Welcome</p>
+          <h1>Care that feels simple.</h1>
+          <p class="hero-text">
+            Use our AI voice assistant to book visits, reschedule appointments, and get quick help with common office requests.
+          </p>
+          <div class="hero-actions">
+            <button class="btn btn-primary" id="heroOpenBtn">Book an appointment</button>
+            <button class="btn btn-secondary" id="heroDemoBtn">Try a demo prompt</button>
+          </div>
+        </div>
+        <div class="hero-card">
+          <h2>Today at SENA</h2>
+          <ul>
+            <li>Same-week visits available</li>
+            <li>New patient appointments</li>
+            <li>Simple rescheduling by voice</li>
+          </ul>
+          <p class="muted">Ask the assistant like you would speak to a front desk team member.</p>
+        </div>
+      </section>
+    </main>
+
+    <button class="floating-assistant" id="floatingAssistantBtn" aria-label="Open assistant">
+      Ask Assistant
+    </button>
+
+    <aside class="assistant-panel" id="assistantPanel" aria-hidden="true">
+      <div class="assistant-header">
+        <div>
+          <div class="assistant-title">AI Medical Assistant</div>
+          <div class="assistant-subtitle">Voice or text · booking and rescheduling only</div>
+        </div>
+        <div class="assistant-header-actions">
+          <button class="text-btn" id="clearChatBtn">Clear chat</button>
+          <button class="icon-btn" id="closeAssistantBtn" aria-label="Close assistant">✕</button>
+        </div>
+      </div>
+
+      <div class="assistant-banner">
+        <div class="banner-badge">AI</div>
+        <div>
+          <h3>Tell us what you need.</h3>
+          <p>Speak or type a request. We will ask for missing details, handle small corrections, and simulate the final booking.</p>
+        </div>
+      </div>
+
+      <div class="assistant-body">
+        <div class="helper-text">
+          <p><strong>Examples:</strong> “I want to book an appointment for Maria Gomez next Monday at 3 pm.”</p>
+          <p><strong>Try a correction:</strong> “Actually, next Tuesday instead.”</p>
+          <p><strong>Or ask:</strong> “Please reschedule my visit.”</p>
+        </div>
+
+        <div id="chat" class="chat"></div>
+      </div>
+
+      <div class="assistant-footer">
+        <div class="input-row">
+          <button class="btn mic-btn" id="micBtn" type="button">🎙</button>
+          <textarea id="input" placeholder="Type or speak your request..."></textarea>
+          <button class="btn btn-primary" id="sendBtn">Send</button>
+        </div>
+        <label class="toggle-row">
+          <input type="checkbox" id="speakToggle" checked />
+          <span>Speak responses aloud</span>
+        </label>
+        <div id="statusLine" class="status-line">Ready.</div>
+      </div>
+    </aside>
+
+    <script src="app.js"></script>
+  </body>
+</html>
