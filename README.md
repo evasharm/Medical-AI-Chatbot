@@ -40,7 +40,7 @@ sena-medical-assistant/
 
 3. Add your API key
    cp .env.example .env
-   # then open .env and paste your Gemini API key
+   then open .env and paste your Gemini API key
 
 4. Run the server
    node server.js
