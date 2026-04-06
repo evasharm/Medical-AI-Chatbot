@@ -16,6 +16,13 @@ A simple medical office voice assistant demo.
 - Logs a multi-turn conversation between the chatbot and user
 - Simulates the final action (no real backend), and logs the result
 
+## Technical approach
+
+The chatbot assistant is built around a fill-in-the-blanks conversation model. Each message from the user is parsed to extract three pieces of information: name, date, and time. These are stored in a server session. The assistant will continue to ask follow up questions until all three slots are filled, and then confirms the booking.
+Parsing is handled in two layers. When a Gemini API key is activated, Gemini 2.0 Flash recieves the user's message along with a prompt, and returns JSON that contains the intent, extracted info,  missing fields, and if the message is a correction. If Gemini is unavailable, an internal parser detects intent and parses the message manually with no external API call.
+The server handles session states across turns, so the assistant remembers names/other info provided in one message when asking for other information in the next. A session will reset automatically when a booking or rescheduling is finalized.
+The frontend communicates with the server via a single POST endpoint (/api/interpret) and leaves all reply generation to the server. It displays whatever the server returns. Speech input uses the browser's Web Speech API, and has the text input box as a fallback.
+
 ## Project structure
 
 ```text
