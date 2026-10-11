@@ -1,20 +1,17 @@
 # Medical Assistant
 
-A simple medical office voice assistant demo.
+This is a simple voice assistant demo intended for a medical office! No backend
 
 ## What it does
 
 - Accepts speech or text input in the browser
-- Uses Gemini 2.0 when an API key is present
-- Falls back to a local parser if no API key is set
-- Supports these three intents so far:
+- Uses Gemini 2.0 as an LLM when an API key is present, and falls back to a parser if there is no API key se
+- So far, supports these three intents:
   - book an appointment
   - reschedule an appointment
   - fallback for anything else
-- Asks for missing name, date, or time
-- Handles small corrections
+- Asks for missing name, date, or time, and handles small corrections
 - Logs a multi-turn conversation between the chatbot and user
-- Simulates the final action (no real backend), and logs the result
 
 ## Technical approach
 
@@ -41,7 +38,6 @@ sena-medical-assistant/
 
 1. Clone the repo
 
-
 2. Install dependencies
    npm install
 
@@ -53,11 +49,6 @@ sena-medical-assistant/
    node server.js
 
 5. Open http://localhost:3000
-
-## Notes
-
-- Browser speech recognition support and performance will vary by browser.
-- The text box works as fallback to the speech recognition.
 
 ## Good demo prompts
 
